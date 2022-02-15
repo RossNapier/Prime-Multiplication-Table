@@ -24,6 +24,27 @@ export const primeNumbers = [];
 
 
 
+// a function to find the next prime number after the requested number.
+// It reads the last number in the array, adds one and checks each number.
+// If it does not find a prime, it increments the number to check by one,
+// and runs the check again.
+// Once a prime is identified, it returns the number.
+
+export const findNextPrime = function() {
+    let num = primeNumbers[primeNumbers.length - 1] + 1;
+    for (let i = 2; i; i++) {
+        if (checkPrime(num)) {
+            return num;
+        } else {
+            num += 1;
+        };
+    };
+    return num;
+};
+
+
+
+
 // Another loop is used to create the array of results.
 // First it calls the checkPrime function, passing in num as an
 // argument. If checkPrime is 'true' and returns the number, it is
@@ -37,7 +58,10 @@ export const primeNumbersArray = function(num) {
             primeNumbers.push(i);
         };
     };
+    primeNumbers.push(findNextPrime());
 };
+
+
 
 
 // primeNumbersArray(7);
