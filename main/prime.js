@@ -15,4 +15,30 @@ export const checkPrime = function(num) {
     return num > 1;
 };
 
-console.log(checkPrime(7), checkPrime(9));
+
+
+// create an empty array, in which to store prime numbers
+
+export const primeNumbers = [];
+
+
+
+
+// Another loop is used to create the array of results.
+// First it calls the checkPrime function, passing in num as an
+// argument. If checkPrime is 'true' and returns the number, it is
+// added to the array.
+// Once this loop is complete, it calls the findNextPrime function
+// and adds the resulting number to the array.
+
+export const primeNumbersArray = function(num) {
+    for (let i = 1; i <= num; i++) {
+        if (checkPrime(i)) {
+            primeNumbers.push(i);
+        };
+    };
+};
+
+
+primeNumbersArray(7);
+console.log(primeNumbers);
