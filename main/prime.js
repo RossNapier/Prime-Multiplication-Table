@@ -40,5 +40,5 @@ export const primeNumbersArray = function(num) {
 };
 
 
-primeNumbersArray(7);
+// primeNumbersArray(7);
 console.log(primeNumbers);
