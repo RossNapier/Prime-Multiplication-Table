@@ -1,3 +1,13 @@
+//import prompt-sync to allow console user input, however,
+// prompt-sync only allows us to CREATE a prompting function
+// so it is created with a new variable 'prompt'
+
+import PromptSync from "prompt-sync";
+const prompt = PromptSync();
+
+
+
+
 // a function is created to determine whether a number is prime or not.
 // it creates a loop, starting with the smallest prime number and
 // ending with the parameter number. It then increments by 1, checking
@@ -59,6 +69,7 @@ export const primeNumbersArray = function(num) {
         };
     };
     primeNumbers.push(findNextPrime());
+    primeMultiplication(num);
 };
 
 
@@ -94,6 +105,26 @@ export const primeMultiplication = function() {
 };
 
 
-// primeNumbersArray(7);
-// primeMultiplication();
-console.log(results);
+
+
+// Finally, the main functionality.
+// If the input is valid:
+// Prompt is called to allow the console user to input their number.
+// This number is passed in to create the array of prime numbers,
+// which also calls the multiplication result method.
+// For formatting reasons, tableInputs duplicates primeNumbers but prefixxed
+// with an asterix.
+// A table is produced, displaying the results within a table.
+// Otherwise, it directs the user to enter a valid number.
+
+// Please ignore the indices from the table, only the main body cells are relevant.
+
+const prime = prompt("Please input number ");
+
+if (prime > 1) {
+    primeNumbersArray(prime);
+    const tableInputs = ["*", ...primeNumbers];
+    console.table([tableInputs, ...results]);
+} else {
+    console.log("A prime must be greater than 1");
+};

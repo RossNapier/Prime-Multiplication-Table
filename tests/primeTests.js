@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {checkPrime, primeNumbers, primeNumbersArray} from '../main/prime.js';
+import {checkPrime, primeNumbers, primeNumbersArray, results} from '../main/prime.js';
 
 describe('Prime Numbers', function() {
     
@@ -44,6 +44,10 @@ describe('Prime Numbers', function() {
       assert.strictEqual(primeNumbers[primeNumbers.length - 1], 769);
       primeNumbersArray(7915);
       assert.strictEqual(primeNumbers[primeNumbers.length - 1], 7919);
+    });
+
+    it('should start with empty results array', function () {
+      assert.deepStrictEqual(results, []);
     });
 
 });
