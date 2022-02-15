@@ -64,5 +64,36 @@ export const primeNumbersArray = function(num) {
 
 
 
+
+// An empty array is created to store results of another function.
+// It is created here so it is accessible by other functions.
+
+export const results = [];
+
+
+
+
+// A prime multiplication function is created.
+// It loops through the prime numbers array, and pushes
+// the prime number as an array (this is for the purposes of the
+// table formatting).
+// This next bit is a bit complicated - it maps the primeNumbers
+// array, multiplies each number within the array by the current
+// prime number, and pushes the result (after spreading as maps
+// always return an array) to the new array created on the line
+// above it.
+// For example, if the number was 2 and primeNumbers = [2, 3, 5],
+// results array would = [2, 4, 6, 10] then repeat the loop.
+// The 2 at the beginning is for the table formatting.
+
+export const primeMultiplication = function() {
+    for (let i = 0; i < primeNumbers.length; i++) {
+        results.push([primeNumbers[i]]);
+        results[i].push(...primeNumbers.map(x => x * primeNumbers[i]));
+    };
+};
+
+
 // primeNumbersArray(7);
-console.log(primeNumbers);
+// primeMultiplication();
+console.log(results);
