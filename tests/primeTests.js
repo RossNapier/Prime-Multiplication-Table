@@ -29,12 +29,21 @@ describe('Prime Numbers', function() {
 
     it('should push primes to array', function () {
         primeNumbersArray(10);
-        assert.deepStrictEqual(primeNumbers, [2, 3, 5, 7]);
+        assert.deepStrictEqual(primeNumbers, [2, 3, 5, 7, 11]);
       });
 
     it('should handle large prime numbers', function () {
         primeNumbersArray(50000);
-        assert.strictEqual(primeNumbers.length, 5137);
+        assert.strictEqual(primeNumbers.length, 5139);
       });
-      
+
+    it('should add additional prime number', function () {
+      primeNumbersArray(3);
+      assert.strictEqual(primeNumbers[primeNumbers.length - 1], 5);
+      primeNumbersArray(765);
+      assert.strictEqual(primeNumbers[primeNumbers.length - 1], 769);
+      primeNumbersArray(7915);
+      assert.strictEqual(primeNumbers[primeNumbers.length - 1], 7919);
+    });
+
 });
