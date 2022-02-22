@@ -2,6 +2,11 @@
 
 A program which takes a number, identifies all primes below it and one above, and displays a multiplication table.
 
+## Running the Code
+
+You can trial the code here: https://replit.com/@RossNapier1/Prime-Multiplication-Table#.replit
+or follow the installation instructions below.
+
 ## Installing the program
 
 1. Download the program from GitHub
@@ -22,7 +27,7 @@ A program which takes a number, identifies all primes below it and one above, an
 
 You are now ready to run the code:
 
-    ```node main/prime.js```
+    node main/prime.js
 
 Once you run the code, please ignore the index cells,
 only the main body cells hold the relevant information.
